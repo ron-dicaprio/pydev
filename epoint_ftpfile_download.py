@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-#author epoint_caitao
+#@author epoint_caitao
 #from bs4 import BeautifulSoup as soup
 import re
 import requests
