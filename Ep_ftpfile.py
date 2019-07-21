@@ -19,9 +19,13 @@ for i in range(1,len(target)):
     target1 = re.findall(r'<A HREF="(.*?)">',response1.text)
     url2 = 'https://oa.epoint.com.cn' + target1[1]
     print('url2:',url2)
+    #strsql = "insert into pyurl set pyepurl = '%s'" % (url2)
+    #cur.execute(strsql)
+    #conn.commit()
     response2 =requests.get(url2,headers = chorme_header)
     file_no += 1
     with open('E:\\pydownload\\%s.%s' % (file_no,target1[1].split('.')[-1]),'wb+') as file:
         file.write(response2.content)
         print(i,'file saved,url is ',url2)
         file.close()
+#conn.close()
