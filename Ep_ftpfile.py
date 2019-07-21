@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-#from  bs4 import BeautifulSoup as soup
+#author epoint_caitao
+#from bs4 import BeautifulSoup as soup
 import re
 import requests
 #import pymysql
@@ -11,7 +12,7 @@ url = 'https://oa.epoint.com.cn/EpointTrainingManage/TrainingFile/File/'
 response = requests.get(url,headers = chorme_header)
 response.encoding='utf-8'
 target = re.findall(r'A HREF="(.*?)"',response.text)
-#file_no = 0
+file_no = 0
 for i in range(1,len(target)):
     url1 = 'https://oa.epoint.com.cn' + target[i]
     response1 = requests.get(url1,headers = chorme_header)
