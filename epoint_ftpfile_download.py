@@ -9,7 +9,7 @@ import requests
 #import pymysql
 #conn = pymysql.connect(host='127.0.0.1', user='root', passwd='Gepoint', db='pydb',charset='utf8mb4')
 #cur = conn.cursor()
-chorme_header = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.3; Trident/7.0; rv 11.0) like Gecko'} 
+chorme_header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2652.2 Safari/537.36'}  
 url = 'https://oa.epoint.com.cn/EpointTrainingManage/TrainingFile/File/'
 response = requests.get(url,headers = chorme_header)
 response.encoding='utf-8'
