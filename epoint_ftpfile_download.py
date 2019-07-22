@@ -2,6 +2,7 @@
 #!/usr/bin/env python
 #@author epoint_caitao
 #@version python 3.7.1rc1
+#单线程爬虫
 #from bs4 import BeautifulSoup as soup
 import re
 import requests
