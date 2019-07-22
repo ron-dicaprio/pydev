@@ -13,7 +13,7 @@ deletesql = "TRUNCATE TABLE pypro"
 reCount = cur.execute(deletesql)
 print('清除数据库成功！')
 conn.commit()
-header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'} 
+header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2652.2 Safari/537.36'}  
 #数据量大，取部分前100页
 for page in range(1,100):
     print(page)
