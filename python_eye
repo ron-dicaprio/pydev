@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-#写一个监控的页面出来，与数据库以及tomcat关联,名字暂定为屁眼
+#写一个监控的页面出来，与数据库以及tomcat关联,名字暂定为屁眼(py_eye)
 import time
 import os
 import datetime
