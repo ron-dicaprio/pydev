@@ -1,0 +1,71 @@
+# -*- coding:utf-8 -*-
+#写一个监控的页面出来，与数据库以及tomcat关联,名字暂定为屁眼
+import time
+import os
+import datetime
+class pylog(object):
+    def info(self):
+        class_file = open('logs/%s.wrapper' % (datetime.datetime.now().date()),'a+',encoding='utf-8')
+        class_file.writelines('###  %s |info| %s\n' % (datetime.datetime.now(),str(self)))
+        #精确到秒的话：datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+        class_file.close()
+#判断index文件是否存在
+if os.path.exists('D:/software/apache-tomcat-7.0.85_64/webapps/sysinfo/index.html'):
+    print('index页面已存在！')
+    pylog.info('index页面已存在')
+else:
+    try:
+        os.system('type nul > D:/software/apache-tomcat-7.0.85_64/webapps/sysinfo/index.html')
+        print('index页面已创建！')
+        pylog.info('index页面已创建')
+    except Exception as e:
+        print('error!',e)
+        pylog.info(e)
+        
+#判断MySQL服务是否运行
+process_mysql = os.popen('tasklist | findstr mysql').readlines()
+if len(process_mysql) == 0:
+    try:
+        os.system('net start mysql')
+        pylog.info('mysql服务启动成功！')
+    except Exception as e:
+        pylog.info('error',e)
+else:
+    pylog.info('tomcat服务已启动')
+#判断tomcat是否运行
+process_tomcat = os.popen('tasklist | findstr wrapper.exe').readlines()
+if len(process_tomcat) == 0:
+    os.system('net start epointtomcat')
+    pylog.info('net start epointtomcat')
+    print('tomcat启动成功！')
+else:
+    print('tomcat服务正在运行')
+    pylog.info('tomcat服务正在运行')
+    
+import smtplib
+from email.mime.text import MIMEText
+#from email.mime.multipart import MIMEMultipart
+#from email.mime.image import MIMEImage
+from_user = '1102346940@qq.com'
+from_passwd = '@password'
+to_user = ["love6018@hotmail.com","1102346940@qq.com"]
+file = open('logs/%s.wrapper' % (datetime.datetime.now().date()),'r+',encoding='utf-8')
+message_text = file.read()
+print(message_text)
+mail_server = smtplib.SMTP('smtp.qq.com',25)
+mail_server.login(from_user,from_passwd)
+message = MIMEText(message_text, 'plain', 'utf-8')
+message['Subject'] = 'tomcat'
+message['From'] = from_user
+message['To'] = ','.join(to_user)
+while True:
+    if datetime.datetime.now().hour > 1:
+        mail_server.sendmail(from_user, message['To'].split(','), message.as_string())
+        print('服务器监控邮件发送成功')
+        pylog.info('服务器监控邮件发送成功')
+        break
+    else:
+        print('服务器监控邮件将于本日23点发送')
+        time.sleep(3600)
+print('email send success!')
+mail_server.quit()
