@@ -59,7 +59,7 @@ message['Subject'] = 'tomcat'
 message['From'] = from_user
 message['To'] = ','.join(to_user)
 while True:
-    if datetime.datetime.now().hour > 1:
+    if datetime.datetime.now().hour > 23:
         mail_server.sendmail(from_user, message['To'].split(','), message.as_string())
         print('服务器监控邮件发送成功')
         pylog.info('服务器监控邮件发送成功')
