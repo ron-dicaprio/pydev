@@ -9,7 +9,7 @@ class pylog(object):
         class_file.writelines('###  %s |info| %s\n' % (datetime.datetime.now(),str(self)))
         #精确到秒的话：datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
         class_file.close()
-#判断index文件是否存在
+#判断index文件是否存在,一个单独的功能，后面再去完善相关拓展功能
 if os.path.exists('D:/software/apache-tomcat-7.0.85_64/webapps/sysinfo/index.html'):
     print('index页面已存在！')
     pylog.info('index页面已存在')
