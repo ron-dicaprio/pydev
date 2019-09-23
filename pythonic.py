@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
+#爬取新点的文件服务器并且下载到本地，后期可跟数据库做关联。
 #from  bs4 import BeautifulSoup as soup
 import re
 import requests
