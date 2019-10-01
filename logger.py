@@ -7,7 +7,7 @@ else:
     os.mkdir('logs')
 '''
 #another kind of time format 
-datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
+#datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')
 '''
 def info(self):
     file = open('logs/%s.wrapper' % (datetime.datetime.now().date()),'a+',encoding='utf-8')
