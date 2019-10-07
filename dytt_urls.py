@@ -1,6 +1,6 @@
 # -*- coding:utf-8 -*-
 #@authur caitao
-#w我就是不写注释
+#caitao:我就是不写注释
 import requests
 import re
 import os
@@ -24,4 +24,4 @@ for h in range(1,100):
     for n in range(0, len(target_url)):
         with open('logs/dytt_urls.txt', 'a+') as file:
             file.writelines('https://www.dytt8.net' + target_url[n] + '\n')
-            file.close
+            file.close()
