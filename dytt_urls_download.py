@@ -21,8 +21,8 @@ with open('logs/dytt_urls.txt','r+') as file:
                 tmpfile.close()
         else:
             pass
-        with open('down_urls.txt','r+') as downlink:
-            downlink.writelines(target_url)
+        with open('down_urls.txt','a+') as downlink:
+            downlink.writelines('%s\n' % (target_url))
             downlink.close()
     file.close()
 
