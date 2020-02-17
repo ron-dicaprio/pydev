@@ -16,12 +16,12 @@ with open('logs/dytt_urls.txt','r+') as file:
         response_con.encoding = 'gbk'
         target_url = re.findall(r'"#fdfddf"><a href="(.*?)">ftp',response_con.text)
         print(target_url)
-        if not os.path.exists('logs/down_urls.txt'):
-            with open('logs/down_urls.txt','a+') as tmpfile:
+        if not os.path.exists('down_urls.txt'):
+            with open('down_urls.txt','a+') as tmpfile:
                 tmpfile.close()
         else:
             pass
-        with open('logs/down_urls.txt','r+') as downlink:
+        with open('down_urls.txt','r+') as downlink:
             downlink.writelines(target_url)
             downlink.close()
     file.close()
