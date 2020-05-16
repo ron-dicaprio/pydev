@@ -6,6 +6,7 @@ from email.mime.text import MIMEText
 #from email.mime.multipart import MIMEMultipart
 #from email.mime.image import MIMEImage
 def py_email(subject,message_con,to_user):
+    to_user=[to_user]
     from_user = '1102346940@qq.com'
     from_passwd = 'password'
     mail_server = smtplib.SMTP('smtp.qq.com',25)
@@ -20,4 +21,3 @@ def py_email(subject,message_con,to_user):
     except Exception as e:
         print(e)
     mail_server.quit()
-py_email('test','testcon','1102346940@qq.com,love6018@hotmail.com')
