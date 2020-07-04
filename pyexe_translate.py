@@ -1,3 +1,68 @@
+# -*- endoding=utf-8 -*-
+from PyQt5.QtWidgets import *
+from PyQt5.QtGui import *
+import sys
+import time
+import py_translate
+print('time1:', time.time())
+class youdaofanyi(QMainWindow):
+    def __init__(self):
+        super().__init__()
+        self.initUI()
+        self.buttonClicked()
+
+    def initUI(self):
+        self.setWindowTitle('有道翻译器V1.0')
+        self.setWindowIcon(QIcon('logo.png'))
+        # 自定义窗口大小
+        self.resize(600, 700)
+        # windows窗口的位置
+        self.move(700, 200)
+        # 文本框位置
+        self.text_area1 = QTextEdit(self)
+        # 窗口位置
+        self.text_area1.move(20, 20)
+        self.text_area1.resize(440,280)
+        #文本框位置
+        self.text_area2 = QTextBrowser(self)
+        #窗口位置
+        self.text_area2.move(20, 350)
+        #窗口区域大小
+        self.text_area2.resize(440, 288)
+
+        btn1 = QPushButton('操作', self)
+        btn1.move(480, 80)
+
+        self.show()
+        self.statusBar().showMessage('兴趣永远是最好的老师！')
+        btn1.clicked.connect(self.buttonClicked)
+
+    def buttonClicked(self):
+        textcontenct = self.text_area1.toPlainText()
+        if textcontenct == '':
+            pass
+        else:
+            self.text_area2.clear()
+            result = py_translate.youdao_translate(textcontenct)
+            self.text_area2.append(result)
+            self.statusBar().showMessage("[%s]翻译成功！" % (result))
+        print('time2:',time.time())
+
+    #自定义退出事件
+    def closeEvent(self, event):
+        reply = QMessageBox.question(self, '提示', "你确定要退出么?", QMessageBox.Yes | QMessageBox.No, QMessageBox.Yes)
+        if reply == QMessageBox.Yes:
+            event.accept()
+        else:
+            event.ignore()
+
+
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    ex = youdaofanyi()
+    sys.exit(app.exec_())
+
+'''
 # -*- coding:utf-8 -*-
 from PyQt5.QtWidgets import *
 from PyQt5.QtGui import *
@@ -92,3 +157,5 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     ex = tanslate()
     sys.exit(app.exec_())
+  
+'''
