@@ -75,7 +75,7 @@ from email.mime.text import MIMEText
 #from email.mime.multipart import MIMEMultipart
 #from email.mime.image import MIMEImage
 from_user = '1102346940@qq.com'
-from_passwd = 'eihypsubcirfbaca'
+from_passwd = '@password'
 to_user = ["love6018@hotmail.com","1102346940@qq.com"]
 file = open('logs/%s.wrapper' % (datetime.datetime.now().date()),'r+',encoding='utf-8')
 message_text = file.read()
