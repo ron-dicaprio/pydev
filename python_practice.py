@@ -514,7 +514,7 @@ import requests
 header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'}
 #while True:
     #url = input('请输入网址\n>>>')
-url='http://tiny4k.club/'
+url='http://url.club/'
 try:
     response = requests.get(url,headers = header)
     #if response.status_code == 200:
@@ -548,7 +548,7 @@ import requests
 header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'}
 #while True:
     #url = input('请输入网址\n>>>')
-url='http://tiny4k.club/'
+url='http://url.club/'
 try:
     response = requests.get(url,headers = header)
     if response.status_code == 200:
@@ -576,7 +576,7 @@ import requests
 header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'}
 #while True:
     #url = input('请输入网址\n>>>')
-url='http://tiny4k.club'
+url='http://url.club'
 try:
     response = requests.get(url,headers = header)
     if response.status_code == 200:
@@ -604,7 +604,7 @@ import requests
 header = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/54.0.2840.99 Safari/537.36'}
 #while True:
     #url = input('请输入网址\n>>>')
-url='http://tiny4k.club/'
+url='http://url.club/'
 try:
     response = requests.get(url,headers = header)
     if response.status_code == 200:
