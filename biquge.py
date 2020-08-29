@@ -15,14 +15,12 @@ response1.encoding = 'utf-8'
 title = re.findall(r'<h1>(.*?)</h1>', response1.text)[0]
 webcontenct = re.findall(r'a href="(.*?)" title="(.*?)"', response1.text)
 
-
 if os.path.exists('biquge'):
     psaa
 else:
     os.mkdir('biquge')
 
-
-for i in range(1, len(webcontenct)):
+for i in range(0, len(webcontenct)):
     print(url+webcontenct[i][0],'\n')
     #请求太频繁会被拦截，设置间隔1S最佳
     time.sleep(1)
