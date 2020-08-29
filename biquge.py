@@ -22,7 +22,7 @@ if os.path.exists(r'biquge'):
 else:
     os.mkdir(r'biquge')
 
-for i in range(1, len(webcontenct)):
+for i in range(0, len(webcontenct)):
     print(url+webcontenct[i][0],'\n')
     #请求太频繁会被拦截，设置间隔1S以上最佳
     time.sleep(1.2)
