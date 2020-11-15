@@ -9,7 +9,12 @@ from bs4 import BeautifulSoup as soup
 import requests
 chorme_header = {
     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2652.2 Safari/537.36'}
+print('笔趣阁主站地址:http://www.biquge.info/')
 url = input('请输入笔趣阁小说下载地址:\n')
+if 'http' in url:
+    pass
+else:
+    url ='http'+url
 response1 = requests.get(url, headers = chorme_header)
 response1.encoding = 'utf-8'
 
