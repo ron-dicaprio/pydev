@@ -1,0 +1,26 @@
+# -*- coding:utf-8 -*-
+# !/usr/bin/env python
+def words2voice(filepath):
+    import pyttsx3
+    import os
+    import time
+    try:
+        engine = pyttsx3.init()
+        filename = filepath.split('\\')[-1]
+        print(11)
+        if not os.path.exists(filename):
+            with open(filepath,'r+', encoding='gb18030') as file:
+                print(22)
+                #for contenct in file.readlines():
+                #按照年月日时分秒作为文件名
+                engine.save_to_file(file.read(), 'd:\\%s.mp3' % (time.strftime('%Y%m%d%H%M%S')))
+                
+                #print(file.read())
+                #engine.say(contenct)
+                engine.runAndWait()
+        else:
+            pass
+    except Exception as e:
+        print(e)
+
+words2voice('D:\\Download\\wkz.txt')
