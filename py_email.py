@@ -9,7 +9,7 @@ from email.mime.multipart import MIMEMultipart
 def py_email(subject,message_con,filepaths,to_user):
     to_user=[to_user]
     from_user = '1102346940@qq.com'
-    from_passwd = 'nshfzkkyjspebaac'
+    from_passwd = 'password'
     mail_server = smtplib.SMTP('smtp.qq.com',25)
     mail_server.login(from_user,from_passwd)
     filepaths = filepaths.replace('/','\\')
