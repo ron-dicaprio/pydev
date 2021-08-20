@@ -1,12 +1,12 @@
 # -*- coding: utf-8 -*-
 #!/usr/bin/env python
-#@author epoint_caitao
+#@author epoint_caitao  rename:free_caitao
 #单线程爬虫
 import re
 import requests
 import time
 import pymysql
-conn = pymysql.connect(host='127.0.0.1', user='root', passwd='Gepoint', db='pydb',charset='utf8mb4')
+conn = pymysql.connect(host='127.0.0.1', user='root', passwd='PASSWD', db='pydb',charset='utf8mb4')
 cur = conn.cursor()
 #数据前清库
 deletesql = "TRUNCATE TABLE pypro"
