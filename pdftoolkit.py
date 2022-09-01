@@ -11,7 +11,7 @@ def py_pdf2docx():
     # 选择pdf文件的路径
     pdf_file = fileopenbox(title='PDF编辑器V1.0', msg='请选择需要转换的PDF文件', default='*.PDF')
     # 防止传参为空
-    if pdf_file != None:
+    if pdf_file is not None:
         # 选择所需要保存的文件路径，默认保存的文件名为当前路径+save.docx
         docx_file = filesavebox(title='PDF编辑器V1.0',msg='请选择需要保存的路径',default='save.docx')
         # 防止传参为空
