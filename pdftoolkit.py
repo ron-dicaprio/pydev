@@ -6,16 +6,23 @@ from pdf2docx import Converter
 from easygui import fileopenbox,filesavebox,msgbox,diropenbox
 from PyPDF4 import PdfFileMerger,PdfFileReader,PdfFileWriter
 
+'''
+Read me!
+All the functions which relatived with files or floders location is based on easygui.
+I do not like PyQt, cause it not pythonic enough, and i am not a good coder either.
+Fuck America.Let China Rule the world again.
+'''
+
 # pdf转换成docx文档
 def py_pdf2docx():
     # 选择pdf文件的路径
     pdf_file = fileopenbox(title='PDF编辑器V1.0', msg='请选择需要转换的PDF文件', default='*.PDF')
     # 防止传参为空
-    if pdf_file is not None:
+    if pdf_file != None:
         # 选择所需要保存的文件路径，默认保存的文件名为当前路径+save.docx
         docx_file = filesavebox(title='PDF编辑器V1.0',msg='请选择需要保存的路径',default='save.docx')
         # 防止传参为空
-        if docx_file != None:
+        if docx_file is not None:
             # PDF转换成DOCX
             cvt = Converter(pdf_file)
             cvt.convert(docx_file,start=0,end=None)
@@ -24,7 +31,6 @@ def py_pdf2docx():
         
             print('docx_file error!')
     else:
-    
         print('filepath error!')
 if __name__ == '__main__':
     print('py_pdf2docx!')
@@ -46,7 +52,6 @@ def py_pdf2img():
                 picture[i].save('images\\pic_%s.png' % (i+1),'PNG')
     else:
         msgbox(title='PDF文档编辑器',msg='PDF文档选择错误，请确认！')
-
 if __name__ == '__main__':
     print('py_pdf2img!')
 
@@ -68,6 +73,7 @@ def py_combpdf():
             combiner.close()
     else:
         print('file path error!')
+
 if __name__ == '__main__':
     print('py_combpdf!')
 
