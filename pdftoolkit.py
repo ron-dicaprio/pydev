@@ -9,7 +9,7 @@ from PyPDF4 import PdfFileMerger,PdfFileReader,PdfFileWriter
 '''
 Read me!
 All the functions which relatived with files or floders location is based on easygui.
-I do not like PyQt, cause it not pythonic enough, and i am not a good coder either.
+I am not a good coder.
 Fuck America.Let China Rule the world again.
 '''
 
