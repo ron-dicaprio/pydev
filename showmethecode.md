@@ -22,9 +22,9 @@
 ```python
 def get_active_code(Lenth,Nums):
     active_code_list=[]
+    # 取值的池子
+    code_pool = "0123456789" + string.ascii_uppercase 
     for codes in range(0,Nums):
-        # 取值的池子
-        code_pool = "0123456789" + string.ascii_uppercase 
         # 定义长度
         active_code = ''.join(random.sample(code_pool,Lenth))
         if active_code in active_code_list:
